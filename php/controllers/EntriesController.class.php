@@ -16,6 +16,11 @@ require_once(dirname(__FILE__) . "/../models/CategoriesModel.class.php");
 
 use Models\CategoriesModel as Categories;
 
+//Importar el modelo "Categories"
+require_once(dirname(__FILE__) . "/../models/TypeModel.class.php");
+
+use Models\TypeModel as Types;
+
 
 class EntriesController{
 
@@ -54,6 +59,35 @@ class EntriesController{
             }
             else{
                 $GLOBALS["error"] = "Ha ocurrido un error al guardar el ingreso/egreso.";
+            }
+
+        }
+
+    }
+
+    public static function newCategory(){
+
+        //Nombre de la página
+        $GLOBALS["pageName"] = "newCategory";
+        //URL para el formulario
+        $GLOBALS["actionUrl"] = $_SERVER["PHP_SELF"];
+        //Listado de entradas
+        $GLOBALS["types"] = Types::getTypes();
+        $GLOBALS["categories"] = Categories::getCategories();
+
+        if(strtolower($_SERVER["REQUEST_METHOD"]) === "post"){
+
+            $type = Types::find($_POST["type"]);
+            $category = new Categories(null, $_POST["name"], $_POST["description"], $type);
+            var_dump($category);
+            //Mandar llamar
+            $id = $category->save();
+            if($id){
+                //Redirección de php
+                header("Location: ./index.php");
+            }
+            else{
+                $GLOBALS["error"] = "Ha ocurrido un error al guardar la categoría.";
             }
 
         }

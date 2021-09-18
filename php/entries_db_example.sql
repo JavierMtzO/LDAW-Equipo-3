@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
-  `description` text,
-  `type_id` bigint UNSIGNED NOT NULL
+  `description` varchar(300),
+  `type_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -54,13 +54,13 @@ INSERT INTO `categories` (`id`, `name`, `description`, `type_id`) VALUES
 --
 
 CREATE TABLE `entries` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `qty` float NOT NULL,
   `description` text,
   `date` datetime NOT NULL,
   `receipt` varchar(50) DEFAULT NULL,
-  `category_id` bigint UNSIGNED NOT NULL
+  `category_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -78,7 +78,7 @@ INSERT INTO `entries` (`id`, `title`, `qty`, `description`, `date`, `receipt`, `
 --
 
 CREATE TABLE `types` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -123,19 +123,19 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `entries`
 --
 ALTER TABLE `entries`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
