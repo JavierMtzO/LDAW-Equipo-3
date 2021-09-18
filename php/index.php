@@ -97,55 +97,6 @@ Controller::index();
                 }
                 ?>
 
-                <!--
-
-                <li class="list-group-item d-flex justify-content-between align-items-center outcome">
-                  
-                    <div class="date me-2">
-                        <p class="mb-0">Jul 28, 2021</p>
-                    </div>
-
-                    <div class="ps-3 me-auto data">
-                        <p class="fw-bold mb-0">Transporte - Carga de Gasolina</p>
-                        <p class="mb-0 mt-1 description">45 litros de magna</p>
-                    </div>
-                    
-                    <span class="badge rounded-pill">$950.75</span>
-                
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-center income">
-
-                    <div class="date me-2">
-                        <p class="mb-0">Ago 15, 2021</p>
-                    </div>
-
-                    <div class="ps-3 me-auto data">
-                        <p class="fw-bold mb-0">Sueldo - pago de Quincena</p>
-                        <p class="mb-0 mt-1 description">Primera quincena de agosto</p>
-                    </div>
-                    
-                    <span class="badge rounded-pill align-self-center">$10,000.00</span>
-
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-center outcome">
-                  
-                    <div class="date me-2">
-                        <p class="mb-0">Ago 10, 2021</p>
-                    </div>
-
-                    <div class="ps-3 me-auto data">
-                        <p class="fw-bold mb-0">Viáticos - Comida en fondita</p>
-                        <p class="mb-0 mt-1 description"></p>
-                    </div>
-                    
-                    <span class="badge rounded-pill">70.00</span>
-                
-                </li>
-
-                -->
-
             </ul>
 
         </main>

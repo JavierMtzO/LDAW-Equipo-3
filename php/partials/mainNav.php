@@ -16,6 +16,9 @@
             <li class="nav-item <?php echo( ($pageName === "newEntry") ? "active" : "" );  ?>">
                 <a class="nav-link" href="./newEntry.php">Crear Entrada</a>
             </li>
+            <li class="nav-item <?php echo( ($pageName === "newCategory") ? "active" : "" );  ?>">
+                <a class="nav-link" href="./newCategory.php">Categorías</a>
+            </li>
             
         </ul>
 

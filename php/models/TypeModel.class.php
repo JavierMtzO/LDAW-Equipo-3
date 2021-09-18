@@ -8,17 +8,13 @@ Métodos normales para representar lógica asociada a una instancia
 
 namespace Models;
 
-require_once(dirname(__FILE__) . "/../models/TypeModel.class.php");
-
-use Models\TypeModel as Types;
-
 //Importar la BD
 require_once(dirname(__FILE__) . "/../utils/db.php");
 
 use DB\DB as DB;
 
 
-class CategoriesModel{
+class TypeModel{
 
     /****************
         ATRIBUTOS
@@ -27,18 +23,16 @@ class CategoriesModel{
     public $id;
     public $name;
     public $description;
-    public $type;
 
     /****************
         CONSTRUCTOR
     *****************/
 
-    public function __construct($id, $name, $description, $type){
+    public function __construct($id, $name, $description){
 
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-        $this->type = $type;
 
     }
 
@@ -64,21 +58,6 @@ class CategoriesModel{
 
     }
 
-    public function save(){
-
-        //Obtener la instancia de la clase BD
-        $db = DB::getDB();
-
-        //Ejecutar la consulta usando db
-        $id = $db->insert(
-            "INSERT INTO categories(name,description,type_id) VALUES(?,?,?)",
-            [$this->name, $this->description, $this->type->id]
-        );
-
-        return $id;
-
-    }
-
 
     /***********************
         MÉTODOS ESTÁTICOS
@@ -90,18 +69,17 @@ class CategoriesModel{
         $db = DB::getDB();
 
         //Ejecutar la consulta
-        $result = $db->query("SELECT * FROM categories WHERE id=?", [$value]);
+        $result = $db->query("SELECT * FROM types WHERE id=?", [$value]);
 
         if($result){
 
             $category = $result[0];
 
             //Crear una instancia de la clase con los datos recuperados de la BD y devolverla
-            return new CategoriesModel(
+            return new TypeModel(
                 $category["id"],
                 $category["name"],
-                $category["description"],
-                $category["type_id"]
+                $category["description"]
             );
         }
 
@@ -110,28 +88,27 @@ class CategoriesModel{
     }
 
     //Devuelve el listado de categorías ordenado por nombre
-    public static function getCategories(){
+    public static function getTypes(){
 
         //Obtener la instancia de la clase BD
         $db = DB::getDB();
 
         //Ejecutar la consulta usando db
-        $categories = $db->query("SELECT * FROM categories ORDER BY name ASC");
+        $types = $db->query("SELECT * FROM types ORDER BY name ASC");
 
-        $categoriesList = [];
+        $typesList = [];
 
-        foreach($categories as $category){
+        foreach($types as $type){
 
-            $categoriesList[] = new CategoriesModel(
-                $category["id"],
-                $category["name"],
-                $category["description"],
-                Types::find($category["type_id"])
+            $typesList[] = new TypeModel(
+                $type["id"],
+                $type["name"],
+                $type["description"]
             );
 
         }
 
-        return $categoriesList;
+        return $typesList;
 
     }
 
