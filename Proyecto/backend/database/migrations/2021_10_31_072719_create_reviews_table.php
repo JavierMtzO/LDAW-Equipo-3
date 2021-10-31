@@ -17,7 +17,6 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->text("comentario");
             $table->integer('calificacion');
-            $table->timestamps();
             $table->foreignId("user_id")
                 ->nullable()
                 ->constrained()

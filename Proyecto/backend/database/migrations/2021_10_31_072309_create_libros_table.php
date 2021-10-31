@@ -18,7 +18,6 @@ class CreateLibrosTable extends Migration
             $table->string("nombre", 50);
             $table->text("resumen");
             $table->string("imagen");
-            $table->timestamps();
             $table->foreignId("genero_id")
                 ->nullable()
                 ->constrained()

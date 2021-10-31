@@ -17,7 +17,6 @@ class CreateAutorsTable extends Migration
             $table->id();
             $table->string("nombre", 50);
             $table->text("apellidos");
-            $table->timestamps();
             $table->foreignId("paisDeOrigen_id")
                 ->nullable()
                 ->constrained()

@@ -16,7 +16,6 @@ class CreatePaisDeOrigensTable extends Migration
         Schema::create('paisDeOrigens', function (Blueprint $table) {
             $table->id();
             $table->string("nombre", 50);
-            $table->timestamps();
         });
     }
 
