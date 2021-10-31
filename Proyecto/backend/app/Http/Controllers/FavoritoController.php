@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorito;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FavoritoController extends Controller
 {
@@ -14,7 +15,8 @@ class FavoritoController extends Controller
      */
     public function index()
     {
-        //
+        return Favorito::getAll();
+    
     }
 
     /**

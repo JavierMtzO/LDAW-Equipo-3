@@ -17,7 +17,6 @@ class CreatePrivilegiosTable extends Migration
             $table->id();
             $table->string("nombre", 50);
             $table->text("descripcion");
-            $table->timestamps();
         });
     }
 
