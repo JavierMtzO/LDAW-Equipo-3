@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\libroAutor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LibroAutorController extends Controller
 {
@@ -14,7 +15,7 @@ class LibroAutorController extends Controller
      */
     public function index()
     {
-        //
+        return libroAutor::getAll();
     }
 
     /**

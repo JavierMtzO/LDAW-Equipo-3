@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RolPrivilegio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RolPrivilegioController extends Controller
 {
@@ -14,7 +15,8 @@ class RolPrivilegioController extends Controller
      */
     public function index()
     {
-        //
+        return RolPrivilegio::getAll();
+
     }
 
     /**

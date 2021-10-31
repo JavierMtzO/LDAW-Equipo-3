@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Autor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AutorController extends Controller
 {
@@ -14,7 +15,7 @@ class AutorController extends Controller
      */
     public function index()
     {
-        //
+        return Autor::getAll();
     }
 
     /**

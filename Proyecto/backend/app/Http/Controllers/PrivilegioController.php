@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Privilegio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PrivilegioController extends Controller
 {
@@ -14,7 +15,8 @@ class PrivilegioController extends Controller
      */
     public function index()
     {
-        //
+        return Privilegio::getAll();
+
     }
 
     /**

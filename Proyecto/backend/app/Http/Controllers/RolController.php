@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RolController extends Controller
 {
@@ -14,7 +15,8 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
+        return Rol::getAll();
+
     }
 
     /**

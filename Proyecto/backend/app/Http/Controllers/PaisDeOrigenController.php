@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PaisDeOrigen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaisDeOrigenController extends Controller
 {
@@ -14,7 +15,7 @@ class PaisDeOrigenController extends Controller
      */
     public function index()
     {
-        //
+        return PaisDeOrigen::getAll();
     }
 
     /**

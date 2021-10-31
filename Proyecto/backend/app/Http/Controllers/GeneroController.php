@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Genero;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GeneroController extends Controller
 {
@@ -14,7 +15,7 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        return Genero::getAll();
     }
 
     /**
