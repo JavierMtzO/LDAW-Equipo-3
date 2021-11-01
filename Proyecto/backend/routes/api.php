@@ -13,7 +13,7 @@ use App\Http\Controllers\LibroCategoriaController;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\PaisDeOrigenController;
 use App\Http\Controllers\PrivilegioController;
-use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\RolPrivilegioController;
 
@@ -43,7 +43,7 @@ Route::apiResources([
     'libros' => LibroController::class,
     'paisDeOrigen' => PaisDeOrigenController::class,
     'privilegios' => PrivilegioController::class,
-    'reviews' => ReviewsController::class,
+    'reviews' => ReviewController::class,
     'roles' => RolController::class,
     'rolPrivilegio' => RolPrivilegioController::class,
 ]);
