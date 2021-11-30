@@ -15,7 +15,9 @@ class LibroController extends Controller
      */
     public function index()
     {
-        return Libro::getAll();
+        
+         $libro = Libro::getAll();
+         return ['libros' => $libro];
     }
 
     /**
@@ -26,7 +28,12 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*$request -> validate([
+            'nombre' => 'required',
+            'resumen' => 'required',
+            'genero_id' => 'required'
+        ]);*/
+        return Libro::create($request->all());
     }
 
     /**
@@ -35,9 +42,10 @@ class LibroController extends Controller
      * @param  \App\Models\Libro  $libro
      * @return \Illuminate\Http\Response
      */
-    public function show(Libro $libro)
+    public function show($id)
     {
-        //
+        $libro = Libro::find($id);
+        return ['libro' => $libro];
     }
 
     /**
@@ -47,9 +55,17 @@ class LibroController extends Controller
      * @param  \App\Models\Libro  $libro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Libro $libro)
+    public function update(Request $request, $id)
     {
-        //
+        $libro = Libro::find($id);
+        $libro->titulo=$request->input('0');
+        $libro->autor=$request->input('1');
+        $libro->ISBN=$request->input('2');
+        $libro->paisPro=$request->input('3');
+        $libro->categoria_id=$request->input('4');
+        $libro->genero_id=$request->input('5');
+        $libro->save();
+
     }
 
     /**
@@ -58,8 +74,8 @@ class LibroController extends Controller
      * @param  \App\Models\Libro  $libro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Libro $libro)
+    public function destroy($id)
     {
-        //
+        return Libro::destroy($id);
     }
 }

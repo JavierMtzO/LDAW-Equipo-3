@@ -20,6 +20,8 @@ class LibroSeeder extends Seeder
                 'nombre' => 'Historia Interminable',
                 'resumen' => 'Lorem Ipsum...',
                 'imagen' => 'historia_interminable.jpeg',
+                'created_at' => '2021-11-30 06:15:50',
+                'updated_at' => '2021-11-30 06:15:51',
                 'genero_id' => 1
             ],
         ]);

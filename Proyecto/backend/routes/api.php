@@ -57,3 +57,9 @@ Route::apiResources([
     'roles' => RolController::class,
     'rolPrivilegio' => RolPrivilegioController::class,
 ]);
+
+Route::get('/libros', [LibroController::class, 'index']);
+Route::post('/libros/store', [LibroController::class, 'store']);
+Route::delete('/libros/destroy/{id}', [LibroController::class, 'destroy']);
+Route::get('/libros/show/{id}', [LibroController::class, 'show']);
+

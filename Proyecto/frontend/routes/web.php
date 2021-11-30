@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,11 @@ Route::get("/login", function(){
     return view('auth.login');
 
 });
+Route::get('/libros/index', function () {
+    return view('welcome');
+});
+
+Route::get('/libros/index', [LibroController::class, 'index']);
+Route::get('/libros/storeView', [LibroController::class, 'storeView']);
+Route::post('/libros/store', [LibroController::class, 'store']);
+Route::delete('/libros/destroy/{id}', [LibroController::class, 'destroy']);
