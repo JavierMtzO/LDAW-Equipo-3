@@ -16,6 +16,7 @@ use App\Http\Controllers\PrivilegioController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\RolPrivilegioController;
+use App\Http\Controllers\API\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,17 @@ use App\Http\Controllers\RolPrivilegioController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+*/
+
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::post('logout', [AuthController::class, 'logout']);
 });
 
 // Ruta para Autores
