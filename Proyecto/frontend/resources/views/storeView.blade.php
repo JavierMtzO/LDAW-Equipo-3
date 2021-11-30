@@ -25,9 +25,9 @@
     <form method="post" action="/libros/store">
         @csrf
         <label for="fname">Nombre:</label><br>
-        <input type="hidden" id="nombre" name="nombre" value="test" /><br>
+        <input type="hidden" id="nombre" name="nombre" value="test2" /><br>
         <label for="lname">Resumen:</label><br>
-        <input type="hidden" id="resumen" name="resumen" value="test" /><br>
+        <input type="hidden" id="resumen" name="resumen" value="test2" /><br>
         <input type="hidden" id="imagen" name="imagen" value="test" /><br>
         <input type="hidden" id="genero_id" name="genero_id" value="1" /><br>
         <button type="submit">Registrar</button>
